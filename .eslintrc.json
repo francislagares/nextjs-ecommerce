@@ -1,0 +1,135 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
+  "ignorePatterns": ["node_modules", "build", "coverage", "cypress.config.ts"],
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true,
+    "serviceworker": true,
+    "cypress/globals": true
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "next",
+    "prettier",
+    "eslint:recommended",
+    "plugin:css-import-order/recommended",
+    "plugin:tailwindcss/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": [
+    "testing-library",
+    "jest-dom",
+    "jsx-a11y",
+    "import",
+    "css-import-order",
+    "prettier",
+    "@typescript-eslint"
+  ],
+  "settings": {
+    "typescript": {
+      "alwaysTryTypes": true,
+      "project": "."
+    },
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "react/prop-types": ["off"],
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".jsx"] }],
+    "no-shadow": "off",
+    "no-use-before-define": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/no-array-index-key": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-curly-newline": "off",
+    "react/no-unescaped-entities": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/function-component-definition": "off",
+    "quotes": "off",
+    "array-bracket-spacing": 1,
+    "prettier/prettier": [
+      "warn",
+      {
+        "printWidth": 80,
+        "singleQuote": true,
+        "endOfLine": "auto"
+      }
+    ],
+    // eslint-plugin-import rules
+    "import/named": "error",
+    "import/namespace": "error",
+    "import/default": "error",
+    "import/export": "error",
+    "import/prefer-default-export": 0,
+    "import/no-anonymous-default-export": 0,
+    "import/no-unresolved": 2,
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "groups": [
+          ["builtin"],
+          ["external"],
+          ["parent", "internal", "sibling", "index", "unknown"]
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "builtin",
+            "position": "before"
+          },
+          {
+            "pattern": "@/**",
+            "group": "internal",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"]
+      }
+    ],
+    "import/extensions": ["error", "never"]
+  },
+
+  "overrides": [
+    {
+      "files": "**/*.+(ts|tsx)",
+      "parser": "@typescript-eslint/parser",
+      "plugins": ["@typescript-eslint/eslint-plugin"],
+      "extends": ["plugin:@typescript-eslint/recommended", "prettier"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "no-use-before-define": [0],
+        "@typescript-eslint/no-use-before-define": [1],
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    },
+    // Only use Testing Library lint rules in jest test files
+    {
+      "files": ["tests/**/?(*.)+(spec|test).[jt]s?(x)"],
+      "extends": ["plugin:testing-library/react"]
+    },
+    // use Cypress lint rules in Cypress test files
+    {
+      "files": ["cypress/**/?(*.)+(cy).[jt]s?(x)", "cypress/support/*"],
+      "extends": ["plugin:cypress/recommended"],
+      "env": { "cypress/globals": true }
+    }
+  ]
+}

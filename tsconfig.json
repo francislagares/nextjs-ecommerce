@@ -1,0 +1,55 @@
+{
+  "compilerOptions": {
+    /* Project Setup */
+    "target": "ES2022",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "preserve",
+    "allowJs": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "removeComments": true,
+    "downlevelIteration": true,
+
+    /* Strict Type-Checking */
+    "strict": true,
+
+    /* Linter Checks */
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": true,
+    "useDefineForClassFields": true,
+
+    /* Module Resolution */
+    "module": "esnext",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "vite": ["node_modules/vite"]
+    },
+    "noEmit": true,
+    "incremental": true
+  },
+  "include": [
+    "cypress",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules", "cypress.config.ts"]
+}
