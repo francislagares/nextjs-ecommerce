@@ -2,7 +2,7 @@
   "extends": ["stylelint-config-standard", "stylelint-a11y/recommended"],
   "plugins": ["stylelint-a11y", "stylelint-order"],
   "rules": {
-    "number-leading-zero": "never",
+    "number-leading-zero": "always",
     "selector-class-pattern": null,
     "a11y/no-text-align-justify": true,
     "a11y/no-obsolete-element": true,
