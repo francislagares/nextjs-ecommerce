@@ -23,7 +23,7 @@
     "lint": "eslint --ext js,jsx,ts,tsx --fix --ignore-path .gitignore .",
     "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx|json|md)\" --write",
     "stylelint": "stylelint **/*.{css,scss,tsx,js} --fix",
-    "prepare": "npx husky install"
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
@@ -35,10 +35,10 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@sanity/image-url": "^1.0.2",
     "@stripe/stripe-js": "^2.2.0",
-    "@vercel/nft": "^0.24.4",
+    "@vercel/nft": "^0.26.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
-    "lucide-react": "^0.294.0",
+    "lucide-react": "^0.298.0",
     "next": "14.0.4",
     "next-sanity": "^7.0.3",
     "react": "18.2.0",
@@ -65,8 +65,8 @@
     "@testing-library/react": "^14.1.2",
     "@testing-library/user-event": "^14.5.1",
     "@types/node": "20.10.4",
-    "@types/react": "18.2.43",
-    "@types/react-dom": "18.2.17",
+    "@types/react": "18.2.45",
+    "@types/react-dom": "18.2.18",
     "@typescript-eslint/eslint-plugin": "^6.13.2",
     "@typescript-eslint/parser": "^6.13.2",
     "@vitejs/plugin-react": "^4.2.1",
@@ -126,6 +126,5 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
-  },
-  "packageManager": "yarn@4.0.2"
+  }
 }
