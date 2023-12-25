@@ -13,3 +13,12 @@ export interface ProductDetail extends Product {
   images: string[];
   price_id: string;
 }
+
+export interface ProductCart {
+  price_id: string;
+  name: string;
+  description: string;
+  price: number;
+  currency: string;
+  image: string;
+}

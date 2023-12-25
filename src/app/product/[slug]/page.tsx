@@ -1,5 +1,6 @@
 import { Star, Truck } from 'lucide-react';
 
+import AddToBag from '@/app/components/AddToBag';
 import ImageGallery from '@/app/components/ImageGallery';
 import { client } from '@/app/lib/sanity';
 import { Button } from '@/components/ui/button';
@@ -70,6 +71,18 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
             <div className='mb-6 flex items-center gap-2 text-gray-500'>
               <Truck className='h-6 w-6' />
               <span className='text-sm'>2-4 Day Shipping</span>
+            </div>
+
+            <div className='flex gap-2.5'>
+              <AddToBag
+                currency='USD'
+                description={data.description}
+                image={data.images[0]}
+                name={data.name}
+                price={data.price}
+                key={data._id}
+                price_id={data.price_id}
+              />
             </div>
 
             <p className='mt-12 text-base tracking-wide text-gray-500'>
