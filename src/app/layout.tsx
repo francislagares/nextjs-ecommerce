@@ -1,6 +1,8 @@
 import { Inter } from 'next/font/google';
 
 import Navbar from './components/Navbar';
+import CartProvider from './components/Providers';
+import ShoppingCartModal from './components/ShoppingCartModal';
 
 import '@/app/styles/globals.css';
 
@@ -19,8 +21,11 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <Navbar />
-        {children}
+        <CartProvider>
+          <Navbar />
+          <ShoppingCartModal />
+          {children}
+        </CartProvider>
       </body>
     </html>
   );
