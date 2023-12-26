@@ -24,6 +24,8 @@ const getData = async (slug: string) => {
   return data;
 };
 
+export const dynamic = 'force-dynamic';
+
 const ProductPage = async ({ params }: { params: { slug: string } }) => {
   const data: ProductDetail = await getData(params.slug);
 
